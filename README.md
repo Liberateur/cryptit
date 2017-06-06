@@ -1,4 +1,5 @@
 cryptit (V0.1.0)
+ [![Build Status](https://travis-ci.org/deepaknverma/cryptit.svg?branch=master)](https://travis-ci.org/deepaknverma/cryptit)
 ================
 
 node promise module to perform encryption and decryption process based on the details provided below:
