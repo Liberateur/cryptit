@@ -1,4 +1,4 @@
-cryptit (V0.1.0)
+encryptit (V0.1.0)
  [![Build Status](https://travis-ci.org/deepaknverma/cryptit.svg?branch=master)](https://travis-ci.org/deepaknverma/cryptit)
 ================
 
@@ -9,6 +9,10 @@ node promise module to perform encryption and decryption process based on the de
 - key : Key for encryption
 
 This library is helpful in defining environment variable in your project where you want to keep them secure and only accessible to your application. There is also a functionality to trigger encryption and decryption manually calling below method and passing file path and key. Instead of saving to file it will return data back to user.
+
+Install
+=======
+	npm install encryptit
 
 Methods
 =======
