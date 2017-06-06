@@ -1,6 +1,6 @@
 {
   "name": "cryptit",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "node wrapper to encrypt and dycrpt payload, files and buffers",
   "main": "index.js",
   "scripts": {
