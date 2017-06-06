@@ -1,5 +1,5 @@
 {
-  "name": "cryptit",
+  "name": "encryptit",
   "version": "1.0.0",
   "description": "node wrapper to encrypt and dycrpt payload, files and buffers",
   "main": "index.js",
