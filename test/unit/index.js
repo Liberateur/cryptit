@@ -2,7 +2,7 @@
 * @Author: Deepak Verma
 * @Date:   2015-09-23 09:30:12
 * @Last Modified by:   dverma
-* @Last Modified time: 2017-02-06 12:28:33
+* @Last Modified time: 2017-06-06 11:05:14
 */
 
 'use strict';
@@ -11,8 +11,8 @@ const join = require('path').join;
 const fs = require('fs');
 const root = require('../../index').crypt;
 
-describe('Encrypt ENV -', function() {
-	it('should encrypt and return a boolean back', function(done) {
+describe('Encrypt ENV -', () => {
+	it('should encrypt and return a boolean back', (done) => {
 		const crypt = new root({
 			bytes: 256,
 			algorithmSuffix: 'cbc',
@@ -22,19 +22,19 @@ describe('Encrypt ENV -', function() {
 			outputFilePath: join(__dirname, '../resources/config.env')
 		});
 		crypt.encryptCBC()
-			.then(function(data) {
+			.then((data) => {
 				should.exist(data);
 				should(typeof data).equal('boolean');
 				done();
 			})
-			.catch(function(err) {
+			.catch((err) => {
 				console.error(err);
 				should.not.exist(err);
 				done();
 			});
 	});
 
-	it('should encrypt and return a string back', function(done) {
+	it('should encrypt and return a string back', (done) => {
 		const crypt = new root({
 			bytes: 256,
 			algorithmSuffix: 'cbc',
@@ -45,21 +45,21 @@ describe('Encrypt ENV -', function() {
 			return: true
 		});
 		crypt.encryptCBC()
-			.then(function(data) {
+			.then((data) => {
 				// console.log(data);
 				should.exist(data);
 				should(typeof data).equal('string');
 				done();
 			})
-			.catch(function(err) {
+			.catch((err) => {
 				console.error(err);
 				should.not.exist(err);
 				done();
 			});
 	});
 });
-describe('Decrypt ENV -', function() {
-	it('should decrypt and return an boolean success back', function(done) {
+describe('Decrypt ENV -', () => {
+	it('should decrypt and return an boolean success back', (done) => {
 		const crypt = new root({
 			bytes: 256,
 			algorithmSuffix: 'cbc',
@@ -69,20 +69,20 @@ describe('Decrypt ENV -', function() {
 			outputFilePath: join(__dirname, '../resources/env.json')
 		});
 		crypt.decryptCBC()
-			.then(function(data) {
+			.then((data) => {
 				// console.log(data);
 				should.exist(data);
 				should(typeof data).equal('boolean');
 				done();
 			})
-			.catch(function(err) {
+			.catch((err) => {
 				console.error(err);
 				should.not.exist(err);
 				done();
 			});
 	});
 
-	it('should decrypt and return an object back', function(done) {
+	it('should decrypt and return an object back', (done) => {
 		const crypt = new root({
 			bytes: 256,
 			algorithmSuffix: 'cbc',
@@ -93,7 +93,7 @@ describe('Decrypt ENV -', function() {
 			return: true
 		});
 		crypt.decryptCBC()
-			.then(function(data) {
+			.then((data) => {
 				// console.log(data);
 				should.exist(data);
 				should(typeof data).equal('string');
@@ -101,14 +101,14 @@ describe('Decrypt ENV -', function() {
 				should(thisObject.base['app-port']).equal(3000);
 				done();
 			})
-			.catch(function(err) {
+			.catch((err) => {
 				console.error(err);
 				should.not.exist(err);
 				done();
 			});
 	});
-	// TODO: FIXME: need to handle wrond keys
-	it.skip('should return invalid key error', function(done) {
+
+	it('should return invalid key error', (done) => {
 		const crypt = new root({
 			bytes: 256,
 			algorithmSuffix: 'cbc',
@@ -118,14 +118,13 @@ describe('Decrypt ENV -', function() {
 			outputFilePath: join(__dirname, '../resources/env.json')
 		});
 		crypt.decryptCBC()
-			.then(function(data) {
+			.then((data) => {
 				should.not.exist(data);
 				done();
 			})
-			.catch(function(err) {
-				// console.error(err);
+			.catch((err) => {
 				const error = new Error(err);
-				should(error.message).equal('Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt');
+				should(error.message).equal('Error: Unable to decrypt. Bad Key');
 				should.exist(err);
 				done();
 			});

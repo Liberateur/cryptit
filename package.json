@@ -24,19 +24,8 @@
     "mocha": "^3.4.2",
     "istanbul": "^0.4.0",
     "should": "^11.2.1",
-    "sinon": "^2.3.2",
-    "jsdoc-to-markdown": "^3.0.0",
     "eslint": "^3.19.0",
     "babel-eslint": "^7.2.3",
-    "debug": "^2.2.0",
-    "chai": "^4.0.2",
-    "gulp": "^3.9.0",
-    "run-sequence": "^1.1.5",
-    "conventional-changelog": "^1.1.0",
-    "conventional-github-releaser": "^1.1.1",
-    "gulp-bump": "^2.0.1",
-    "gulp-util": "^3.0.7",
-    "gulp-git": "^2.4.0",
-    "minimist": "^1.2.0"
+    "debug": "^2.2.0"
   }
 }
